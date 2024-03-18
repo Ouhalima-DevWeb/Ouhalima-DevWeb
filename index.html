@@ -78,18 +78,21 @@
             </div>
         </div>
         <!-- Header End -->
-        <?php
-            function calculateExperience($startDate) {
-                    // Create DateTime objects for start date and current date
-                    $startDateTime = new DateTime($startDate);
-                    $currentDateTime = new DateTime();
-                    $interval = $startDateTime->diff($currentDateTime);
-                    $years = $interval->y;
-                    return $years;
-            }
-            $startDate = "2019-10-19";
-            $yearsOfExperience = calculateExperience($startDate);
-        ?>
+        <script> 
+          function calculateExperience(startDate) {
+            var startDateTime = new Date(startDate);
+            var currentDateTime = new Date();
+            var difference = currentDateTime - startDateTime;
+            var millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25;
+            var years = difference / millisecondsPerYear;
+            years = Math.floor(years);
+            return years;
+          }
+            var startDate = "2019-10-19";
+            var yearsOfExperience = calculateExperience(startDate);
+
+            console.log(yearsOfExperience);
+        </script>
         <!-- About Starte -->
         <div class="container-fluid py-5" id="about">
             <div class="container">
@@ -107,7 +110,7 @@
                         <div class="row mb-3">
                             <div class="col-sm-6 py-2"><h6>Nom et Prénom: <span class="text-secondary">Ouhalima Sofiane</span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Diplôme: <span class="text-secondary text-nowrap">Master spécialité système<br/> d'information, optimisation et désision.</span></h6></div>
-                            <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary"><?php echo $yearsOfExperience.' Années'; ?></span></h6></div>
+                            <div class="col-sm-6 py-2"><h6>Experience: <span class="text-secondary"><script>yearsOfExperience + ' Années';</script></span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Téléphone: <span class="text-secondary">+213 676562577</span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Email: <span class="text-secondary">sofianeou93@gmail.com</span></h6></div>
                             <div class="col-sm-6 py-2"><h6>Addresse: <span class="text-secondary">Wilaya de Tipaza,Koléa</span></h6></div>
