@@ -79,15 +79,15 @@
         </div>
         <!-- Header End -->
         <script> 
-          function calculateExperience(startDate) {
-            var startDateTime = new Date(startDate);
-            var currentDateTime = new Date();
-            var difference = currentDateTime - startDateTime;
-            var millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25;
-            var years = difference / millisecondsPerYear;
-            years = Math.floor(years);
-            return years;
-          }
+            function calculateExperience(startDate) {
+                var startDateTime = new Date(startDate);
+                var currentDateTime = Date.now();
+                var difference = currentDateTime - startDateTime;
+                var millisecondsPerYear = 1000 * 60 * 60 * 24 * 365.25;
+                var years = difference / millisecondsPerYear;
+                years = Math.floor(years);
+                return years;
+            }
             var startDate = "2019-10-19";
             var yearsOfExperience = calculateExperience(startDate);
         </script>
